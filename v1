@@ -1,0 +1,21 @@
+class conversion:
+    def users_input(self):
+        distance = int(input("Enter distance in  meters: "))
+        temperature = int(input("Enter temperature in C: "))
+        weight = int(input("Enter weight in grams: "))
+        return distance, temperature, weight
+
+    def unit_conversion(self, distance, temperature, weight):
+       dist_in_km, temp_in_K, weight_in_kg = None, None, None
+       if distance:
+           dist_in_km = distance / 1000
+       if temperature:
+           temp_in_K = temperature + 273
+       if weight:
+           weight_in_kg = weight / 1000
+       return dist_in_km, temp_in_K, weight_in_kg
+
+conv = conversion()
+distance, temperature, weight = conv.users_input()
+unit_conv = conv.unit_conversion(distance, temperature, weight)
+print(f"\n Distance in kilometers is equal {unit_conv[0]} \n Temperature in Kelvins is equal {unit_conv[1]} \n Weight in kilograms is equal {unit_conv[2]}")
